@@ -27,9 +27,6 @@ public class Empleados {
     @Column(name = "foto")
     private byte[] foto;
     
-    @Column(name = "rol", length = 30)
-    private String rol;
-
 	public Long getId() {
 		return id;
 	}
@@ -82,15 +79,7 @@ public class Empleados {
 		return serialVersionUID;
 	}
 
-	public String getRol() {
-		return rol;
-	}
 
-	public void setRol(String rol) {
-		this.rol = rol;
-	}
-
-    
     
     
     
