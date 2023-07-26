@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pe.com.idat.model.Empleados;
-import pe.com.idat.services.EmpleadosServices;
+
+import pe.com.idat.model.Proveedores;
+import pe.com.idat.services.ProveedoresServices;
 
 
 
@@ -25,26 +26,26 @@ import pe.com.idat.services.EmpleadosServices;
 @RequestMapping("/ModConfig")
 public class ProveedorController {
 	@Autowired
-	EmpleadosServices empleadosServices;
+	ProveedoresServices proveedoresServices;
 	
 	//listamos
-	@GetMapping("/verPersonal")
-	public ArrayList<Empleados>ListarEmpleados(){
-		return empleadosServices.ObtenerEmpleados();
+	@GetMapping("/verProveedor")
+	public ArrayList<Proveedores>ListarEmpleados(){
+		return proveedoresServices.ObtenerEmpleados();
 	}
 	//guardamos
 	
-	@PostMapping("/empleado")
-	public Empleados NuevoPersonal(@RequestBody Empleados newUser) {
-		return empleadosServices.GuardaEmpleados(newUser);
+	@PostMapping("/proveedor")
+	public Proveedores NuevoPersonal(@RequestBody Proveedores newUser) {
+		return proveedoresServices.GuardaEmpleados(newUser);
 	}
 	
 	
 	
 	//Buscar por id
-	@GetMapping(path = "/verPersonal/{id}")
-	public Optional<Empleados>obtenerUsuarioporId(@PathVariable("id") Long id){
-		return empleadosServices.obtenerId(id);
+	@GetMapping(path = "/verProveedor/{id}")
+	public Optional<Proveedores>obtenerUsuarioporId(@PathVariable("id") Long id){
+		return proveedoresServices.obtenerId(id);
 	}
 	
 	
@@ -53,9 +54,9 @@ public class ProveedorController {
 	
 	
 	//Eliminar 
-	@DeleteMapping(path="/empleado/{id}")
+	@DeleteMapping(path="/proveedor/{id}")
 	public String eliminarPorId(@PathVariable("id") Long id){
-		boolean ok=this.empleadosServices.eliminar(id);
+		boolean ok=this.proveedoresServices.eliminar(id);
 		if (ok) {
 			return "Se eliminó el trabajador con id "+id;
 		}else {
@@ -66,12 +67,12 @@ public class ProveedorController {
 	
 	
 	
-	  @PutMapping("/empleado/{id}")
-	  public ResponseEntity<Empleados> editarEmpleado(@RequestBody Empleados emp, @PathVariable Long id){
-		  return empleadosServices.editarEmpleado(emp, id);
+	  @PutMapping("/proveedor/{id}")
+	  public ResponseEntity<Proveedores> editarEmpleado(@RequestBody Proveedores emp, @PathVariable Long id){
+		  return proveedoresServices.editarEmpleado(emp, id);
 	  }
 	
-	
+	  
 	
 	
 	
