@@ -10,8 +10,6 @@ import pe.com.idat.model.Empleados;
 @Repository
 public interface EmpleadosRepository extends JpaRepository<Empleados, Long>{
 	
-	
-	
 
 	public abstract ArrayList<Empleados> findByDni(String prioridad);
 	

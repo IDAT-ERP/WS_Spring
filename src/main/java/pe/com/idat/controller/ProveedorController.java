@@ -23,7 +23,7 @@ import pe.com.idat.services.EmpleadosServices;
 @RestController
 @CrossOrigin("http://localhost:3000")//definimos puertos del cliente web REACT
 @RequestMapping("/ModConfig")
-public class EmpleadoController {
+public class ProveedorController {
 	@Autowired
 	EmpleadosServices empleadosServices;
 	
