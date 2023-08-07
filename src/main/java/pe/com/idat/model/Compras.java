@@ -10,6 +10,9 @@ public class Compras {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "fecha", length = 10)
+    private String fecha;
+    
     @Column(name = "oc", length = 10)
     private String oc;
 
@@ -27,6 +30,19 @@ public class Compras {
     @ManyToOne
     @JoinColumn(name = "idUsuario")
     private Usuarios usuario;
+    
+    
+    
+    
+    
+
+	public String getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(int dia, int mes, int anio) {
+		this.fecha = String.format("%02d-%02-%04",dia,mes,anio);
+	}
 
 	public Integer getId() {
 		return id;
