@@ -14,6 +14,21 @@ public class Modelos {
     @Column(name = "nombre", length = 12)
     private String nombre;
 
+    @ManyToOne
+    @JoinColumn(name = "idmarca")
+    private Marcas marca;
+    
+    
+    
+    
+	public Marcas getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marcas marca) {
+		this.marca = marca;
+	}
+
 	public Long getId() {
 		return id;
 	}

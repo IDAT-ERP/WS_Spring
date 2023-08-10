@@ -57,8 +57,7 @@ public class AlmacenesServices {
     }
 
     private void updateAlmacenAttributes(Almacenes existingAlmacen, Almacenes newAlmacen) {
-        existingAlmacen.setProducto(newAlmacen.getProducto());
-        existingAlmacen.setCompras(newAlmacen.getCompras());
+    	existingAlmacen.setFecha(newAlmacen.getFecha());
         existingAlmacen.setCodSerie(newAlmacen.getCodSerie());
         existingAlmacen.setUsuario(newAlmacen.getUsuario());
     }

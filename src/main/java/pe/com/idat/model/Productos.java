@@ -9,17 +9,10 @@ public class Productos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nombre", length = 12)
+    @Column(name = "nombre", length = 12)//lectora
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name = "idmarca")
-    private Marcas marca;
-
-    @ManyToOne
-    @JoinColumn(name = "idmodelo")
-    private Modelos modelo;
-
+    
 	public Long getId() {
 		return id;
 	}
@@ -36,22 +29,7 @@ public class Productos {
 		this.nombre = nombre;
 	}
 
-	public Marcas getMarca() {
-		return marca;
-	}
-
-	public void setMarca(Marcas marca) {
-		this.marca = marca;
-	}
-
-	public Modelos getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(Modelos modelo) {
-		this.modelo = modelo;
-	}
-
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}

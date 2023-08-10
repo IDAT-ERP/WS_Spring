@@ -13,9 +13,6 @@ public class Marcas {
     @Column(name = "nombre", length = 12)
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name = "idModelo")
-    private Modelos modelo;
 
 	public Long getId() {
 		return id;
@@ -33,13 +30,6 @@ public class Marcas {
 		this.nombre = nombre;
 	}
 
-	public Modelos getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(Modelos modelo) {
-		this.modelo = modelo;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
